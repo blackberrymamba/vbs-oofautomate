@@ -1,0 +1,1 @@
+schtasks /delete /tn OutOfOffice_Enable /f

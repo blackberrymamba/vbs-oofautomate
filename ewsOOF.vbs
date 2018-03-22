@@ -1,19 +1,22 @@
 Option Explicit
 
+Dim userEmail 'Email address
+Dim OofState 'Disabled or Enabled
+Dim ExternalAudience 'None or Known or All
+Dim InternalReply '
+Dim ExternalReply '
+Dim ExchangeUrl
+
+userEmail = "mariusz@example.pl"
+OofState = "Enabled"
+ExternalAudience = "None"
+InternalReply = "Out of office message"
+ExternalReply = ""
+ExchangeUrl = "https://poczta/EWS/Exchange.asmx"
+	
 Public Function buildXml()
 
     Dim xmlDoc, objRoot, objBody, tmpAttr
-    Dim userEmail 'Email address
-    Dim OofState 'Disabled or Enabled
-    Dim ExternalAudience 'None or Known or All
-    Dim InternalReply '
-    Dim ExternalReply '
-
-    userEmail = "mariusz@example.pl"
-    OofState = "Enabled"
-    ExternalAudience = "None"
-    InternalReply = "Out of office message"
-    ExternalReply = ""
 
 
     Set xmlDoc = CreateObject("Microsoft.XMLDOM")  
@@ -130,7 +133,8 @@ Public Function getXmlValueFromTagName(xmlString, tagName, nodeIndex)
 End Function
 
 Dim xmlString, url, method, data, contentType
-url = "https://exchangehost/EWS/Exchange.asmx"
+
+url = ExchangeUrl
 method = "POST"
 data = buildXml()
 contentType = "text/xml; charset=utf-8"

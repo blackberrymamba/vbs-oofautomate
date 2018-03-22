@@ -11,7 +11,7 @@ OofState = "Enabled"                     'Disabled or Enabled
 ExternalAudience = "None"                'None or Known or All
 InternalReply = "Out of office message"  'Internal message
 ExternalReply = ""                       'External message
-url = "https://exchangehost/EWS/Exchange.asmx" 'EWS Url
+ExchangeUrl = "https://exchangehost/EWS/Exchange.asmx" 'EWS Url
 </code>
 </pre>
 
